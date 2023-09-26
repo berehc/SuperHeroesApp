@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using SuperHeroesApp.Models;
 
 var flying = new SuperPower();
 flying.Name = "Flying";
@@ -55,46 +56,6 @@ shazamPowers.Add(wisdom);
 shazamPowers.Add(superSpeed);
 shazamPowers.Add(courage);
 shazam.SuperPowers = shazamPowers;
-
-
-class SuperHeroe
-{
-    public int Id;
-    public string Name;
-    public string SecretIdentity;
-    public string City;
-    public List<SuperPower> SuperPowers;
-    public bool CanFly;
-
-    public SuperHeroe()
-    {
-        Id = 1;
-        SuperPowers = new List<SuperPower>();
-        CanFly = false;
-    }
-
-    public string UsingSuperPowers()
-    {
-        StringBuilder sb = new StringBuilder();
-        foreach (var item in SuperPowers)
-        {
-            sb.AppendLine($"{Name} is using {item.Name} super power");
-        }
-
-        return sb.ToString();
-    }
-}
-
-class SuperPower
-{
-    public string Name;
-    public string Description;
-    public PowerLevel Level;
-    public SuperPower()
-    {
-        Level = PowerLevel.LevelOne;
-    }
- }
 
 enum PowerLevel
 {
