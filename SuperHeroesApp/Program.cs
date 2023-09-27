@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using SuperHeroesApp;
 using SuperHeroesApp.Models;
 
 var flying = new SuperPower();
@@ -27,11 +28,16 @@ courage.Name = "Courage";
 courage.Description = "";
 courage.Level = PowerLevel.LevelOne;
 
+var regeneration = new SuperPower();
+regeneration.Name = "Regeneration";
+regeneration.Description = "The ability to regenerate organic material such as organs, bones, blood, etc";
+regeneration.Level = PowerLevel.LevelThree;
+
 var superman = new SuperHeroe();
 var shazam = new SuperHeroe();
 
 superman.Id = 1;
-superman.Name = "Superman";
+superman.Name = "      Superman   ";
 superman.SecretIdentity = "Clark Kent";
 superman.City = "Metropolis";
 superman.CanFly = true;
@@ -44,6 +50,8 @@ superman.SuperPowers = supermanPowers;
 
 string resultSuperPowers = superman.UsingSuperPowers();
 Console.WriteLine(resultSuperPowers);
+string resultSaveTheWorld = superman.SaveTheWorld();
+Console.WriteLine(resultSaveTheWorld);
 
 shazam.Id= 2;
 shazam.Name = "Shazam";
@@ -57,6 +65,25 @@ shazamPowers.Add(superSpeed);
 shazamPowers.Add(courage);
 shazam.SuperPowers = shazamPowers;
 
+var wolverine = new AntiHero();
+wolverine.Id = 5;
+wolverine.Name = "Wolverine";
+wolverine.SecretIdentity = "Logan";
+wolverine.CanFly = false;
+
+List<SuperPower> wolverinePowers = new List<SuperPower>();
+wolverinePowers.Add(superStrong);
+wolverinePowers.Add(regeneration);
+wolverine.SuperPowers = wolverinePowers;
+
+string resultSuperWolverinePowers = wolverine.UsingSuperPowers();
+Console.WriteLine(resultSuperWolverinePowers);
+
+string antiHeroAction = wolverine.DoAntiHeroAction("Fight against police");
+Console.WriteLine(antiHeroAction);
+
+string resultWolverineSave = wolverine.SaveTheWorld();
+Console.WriteLine(resultWolverineSave);
 enum PowerLevel
 {
     LevelOne,
