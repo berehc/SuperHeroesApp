@@ -3,6 +3,8 @@ using System.Text;
 using SuperHeroesApp;
 using SuperHeroesApp.Models;
 
+var printInfo = new PrintInfo();
+
 var flying = new SuperPower();
 flying.Name = "Flying";
 flying.Description = "Ability to fly and glide in the air";
@@ -48,6 +50,8 @@ supermanPowers.Add(superStrong);
 supermanPowers.Add(superSpeed);
 superman.SuperPowers = supermanPowers;
 
+printInfo.PrintSuperHero(superman);
+
 string resultSuperPowers = superman.UsingSuperPowers();
 Console.WriteLine(resultSuperPowers);
 string resultSaveTheWorld = superman.SaveTheWorld();
@@ -75,6 +79,8 @@ List<SuperPower> wolverinePowers = new List<SuperPower>();
 wolverinePowers.Add(superStrong);
 wolverinePowers.Add(regeneration);
 wolverine.SuperPowers = wolverinePowers;
+
+printInfo.PrintSuperHero(wolverine);
 
 string resultSuperWolverinePowers = wolverine.UsingSuperPowers();
 Console.WriteLine(resultSuperWolverinePowers);
